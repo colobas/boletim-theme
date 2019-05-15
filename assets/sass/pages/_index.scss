@@ -21,7 +21,7 @@ button {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: darkgrey;
+    background-color: #5cc2f2;
     color: white;
     cursor: pointer;
     border-radius: 10px;
@@ -29,7 +29,7 @@ button {
 }
 
 button:hover {
-    background-color: slategrey;
+    background-color: #c2eaf2
 }
 
 .card-wrapper {

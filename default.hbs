@@ -18,6 +18,7 @@
 	<header class="site-header{{#if @blog.cover_image}} cover" style="background-image: url('{{@blog.cover_image}}'){{/if}}">
 		<div class="container">
 			<div class="brand">
+             {{^if @blog.cover_image}}
 				{{#is "index"}}<h1>{{/is}}
 					<a href="{{@blog.url}}">
 					{{#if @blog.logo}}
@@ -27,8 +28,8 @@
 					{{/if}}
 					</a>
 				{{#is "index"}}</h1>{{/is}}
-
 				<p>{{@blog.description}}</p>
+            {{/if}}
 			</div>
 
 			{{navigation}}
