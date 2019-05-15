@@ -18,11 +18,11 @@ $golden-minor: 0.382;
 
 /// Native fonts stack borrowed from Bootstrap 4
 /// @type List
-$fallback-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
+$fallback-font-stack: -apple-system, BlinkMacSystemFont, 'Source Sans Pro', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
 
 /// Text font family
 /// @type List
-$text-font-stack: 'Source Sans Pro', $fallback-font-stack !default;
+$text-font-stack: Roboto, $fallback-font-stack !default;
 
 /// Code (monospace) font family
 /// @type List
