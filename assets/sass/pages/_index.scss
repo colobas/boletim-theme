@@ -1,4 +1,4 @@
-h1 {
+h1, h3 {
     text-align: center;
 }
 
@@ -54,7 +54,7 @@ button:hover {
 		p {
 			font-size: 1.125em;
 			line-height: 1.7;
-			margin: 0;
+			margin: 0 0 15px 0;
             text-align: justify;
 		}
 	}
@@ -66,5 +66,9 @@ button:hover {
             width: 100%;
             height: auto;
         }
+    }
+
+    .readable {
+        overflow: hidden;
     }
 }

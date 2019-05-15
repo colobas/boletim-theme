@@ -73,17 +73,9 @@
 		}
 	}
 
-	.primary-nav {
-		li {
-			margin-right: $phi * 2rem;
-		}
+	ul {
+        width: 95%;
+		margin: 0 auto;
 	}
 
-	.social-nav {
-		margin-left: auto;
-
-		li {
-			margin-left: $phi * 1rem;
-		}
-	}
 }

@@ -4,7 +4,7 @@
 	<ul class="primary-nav">
 		{{#foreach navigation}}
 		<li{{#if current}} class="current"{{/if}}>
-			<a href="{{url absolute="true"}}">{{label}}</a>
+			<a href="{{url absolute="true"}}">{{label}}</a>{{^if @last}}&nbsp;&#124{{/if}}
 		</li>
 		{{/foreach}}
 	</ul>
