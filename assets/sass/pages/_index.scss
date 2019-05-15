@@ -1,7 +1,41 @@
+.intro {
+    width: 80%;
+    margin: 0 auto 4rem;
+}
+
+button {
+    position: fixed;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: darkgrey;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    top: 50%;
+}
+
+button:hover {
+    background-color: slategrey;
+}
+
+.card-wrapper {
+    display: none;
+}
+
+#nextpost {
+    right: 5%;
+}
+
+#prevpost {
+    left: 5%;
+}
+
+
 .posts {
 	article {
-		max-width: 960px;
-		margin-bottom: 4rem;
+		width: 80%;
+		margin: 0 auto 4rem;
 
 		h2 {
 			font-size: 5em;
@@ -17,6 +51,16 @@
 			font-size: 1.125em;
 			line-height: 1.7;
 			margin: 0;
+            text-align: justify;
 		}
 	}
+
+    .logo-partido {
+        width: 30%;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }

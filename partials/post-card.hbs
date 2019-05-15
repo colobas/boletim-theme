@@ -1,0 +1,15 @@
+<article class="{{post_class}} post-card">
+    <header>
+        <h1>{{title}}</h1>
+    </header>
+
+    {{#if feature_image}}
+    <div class="logo-partido">
+        <img src="{{feature_image}}" alt="{{title}}">
+    </div>
+    {{/if}}
+
+    <div class="readable">
+    {{content}}
+    </div>
+</article>

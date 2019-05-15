@@ -1,5 +1,53 @@
 {{!< default }}
 
+<div class="intro">
+Use as setas abaixo para navegar pela lista de partidos. Optámos por escolher
+a mesma ordem do boletim eleitoral de dia 26 maio, que foi obtida por sorteio.
+</div>
+
 <section class="posts">
-	{{> loop}}
+    {{#get "posts" order="updated_at asc"}}
+        {{#foreach posts}}
+            <div class="card-wrapper" id="card_{{@index}}">
+            {{> post-card}}
+            </div>
+        {{/foreach}}
+    {{/get}}
 </section>
+
+<button id="nextpost" onclick="next()" title="prox">&rarr;</button>
+<button id="prevpost" onclick="prev()" title="ante">&larr;</button>
+
+<script>
+var current = 0;
+cur = document.getElementById("card_0");
+cur.style.display = "block";
+
+function next() {
+    cur = document.getElementById("card_"+current.toString());
+    cur.style.display = "none";
+    current += 1;
+    nex = document.getElementById("card_"+current.toString());
+    if (nex === null) {
+        current -= 1;
+        cur.style.display = "block";
+    } else {
+        nex.style.display = "block";
+    }
+};
+
+function prev() {
+    cur = document.getElementById("card_"+current.toString());
+    showing = cur.style.display;
+    cur.style.display = "none";
+    current -= 1;
+    previ = document.getElementById("card_"+current.toString());
+    if (previ === null) {
+        current += 1;
+        cur.style.display = showing;
+    } else {
+        previ.style.display = showing;
+    }
+}
+
+</script>
