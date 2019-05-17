@@ -15,7 +15,8 @@
 
 <script>
 var current = 0;
-cur = document.getElementById("card_0");
+var n_cards = document.getElementsByClass("card-wrapper").length;
+var cur = document.getElementById("card_0");
 cur.style.display = "block";
 
 function next() {
@@ -24,25 +25,22 @@ function next() {
     current += 1;
     nex = document.getElementById("card_"+current.toString());
     if (nex === null) {
-        current -= 1;
-        cur.style.display = "block";
-    } else {
-        nex.style.display = "block";
+        current = 0;
+        nex = document.getElementById("card_"+current.toString());
     }
+    nex.style.display = "block";
 };
 
 function prev() {
     cur = document.getElementById("card_"+current.toString());
-    showing = cur.style.display;
     cur.style.display = "none";
     current -= 1;
     previ = document.getElementById("card_"+current.toString());
     if (previ === null) {
-        current += 1;
-        cur.style.display = showing;
-    } else {
-        previ.style.display = showing;
+        current = n_cards - 1;
+        previ = document.getElementById("card_"+current.toString());
     }
+    previ.style.display = "block";
 }
 
 </script>
