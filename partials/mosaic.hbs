@@ -1,0 +1,7 @@
+<section class="mosaic">
+    {{#get "posts" order="updated_at asc"}}
+    {{#foreach posts}}
+        <div id="square_{{@index}}" class="square" style="background:url('{{feature_image}}')" onclick="showCard({{@index}})"></div>
+        {{/foreach}}
+    {{/get}}
+</section>

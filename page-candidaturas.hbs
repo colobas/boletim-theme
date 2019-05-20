@@ -1,5 +1,9 @@
 {{!< default }}
 
+<div id="mosaic-head">
+{{> mosaic}}
+</div>
+
 <section class="posts">
     {{#get "posts" order="updated_at asc"}}
         {{#foreach posts}}
@@ -18,29 +22,43 @@ var current = 0;
 var n_cards = document.getElementsByClassName("card-wrapper").length;
 cur = document.getElementById("card_0");
 cur.style.display = "block";
+cur_square = document.getElementById("square_"+current.toString());
+cur_square.style.filter = "none";
+cur_square.style.WebkitFilter = "grayscale(0%)";
+
+function showCard(toshow){
+    cur = document.getElementById("card_"+current.toString());
+    nex = document.getElementById("card_"+toshow.toString());
+    if (nex != null) {
+        cur.style.display = "none";
+        cur_square = document.getElementById("square_"+current.toString());
+        cur_square.style.filter = "grayscale(100%)";
+        cur_square.style.WebkitFilter = "grayscale(100%)";
+        nex.style.display = "block";
+        nex_square = document.getElementById("square_"+toshow.toString());
+        nex_square.style.filter = "none";
+        nex_square.style.WebkitFilter = "grayscale(0%)";
+        current = toshow;
+        nex.scrollIntoView({block: "start", behaviour: "smooth"});
+    }
+};
 
 function next() {
-    cur = document.getElementById("card_"+current.toString());
-    cur.style.display = "none";
-    current += 1;
-    nex = document.getElementById("card_"+current.toString());
+    nex = document.getElementById("card_"+(current+1).toString());
     if (nex === null) {
-        current = 0;
-        nex = document.getElementById("card_"+current.toString());
+        showCard(0);
+    } else {
+        showCard(current+1);
     }
-    nex.style.display = "block";
 };
 
 function prev() {
-    cur = document.getElementById("card_"+current.toString());
-    cur.style.display = "none";
-    current -= 1;
-    previ = document.getElementById("card_"+current.toString());
-    if (previ === null) {
-        current = n_cards - 1;
-        previ = document.getElementById("card_"+current.toString());
+    nex = document.getElementById("card_"+(current-1).toString());
+    if (nex === null) {
+        showCard(n_cards-1);
+    } else {
+        showCard(current-1);
     }
-    previ.style.display = "block";
 }
 
 </script>

@@ -1,0 +1,24 @@
+.mosaic {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+}
+
+.square {
+    border-style: solid;
+    border-width: 2px;
+    padding-top: 100%;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center center !important;
+    cursor: pointer;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+
+.square:hover {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+}
+
